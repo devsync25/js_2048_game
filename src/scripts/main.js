@@ -6,9 +6,7 @@
 // const game = new Game();
 
 // Write your code here
-
-const Game = require('../modules/Game.class.js');
-
+const Game = require('../modules/Game.class');
 const game = new Game();
 
 const boardElement = document.querySelector('.game-field');
@@ -74,8 +72,9 @@ document.addEventListener('keydown', (e) => {
 });
 
 startBtn.addEventListener('click', () => {
-  game.restart();
+  game.start();
   startBtn.textContent = 'Restart';
+  startBtn.classList.add('restart');
   messageWin.classList.add('hidden');
   messageLose.classList.add('hidden');
   render();
