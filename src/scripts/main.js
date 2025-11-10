@@ -12,6 +12,7 @@ const game = new Game();
 const boardElement = document.querySelector('.game-field');
 const scoreElement = document.querySelector('.game-score');
 const startBtn = document.querySelector('.button.start');
+const startMessage = document.querySelector('.message-start');
 const messageWin = document.querySelector('.message-win');
 const messageLose = document.querySelector('.message-lose');
 
@@ -74,9 +75,13 @@ document.addEventListener('keydown', (e) => {
 startBtn.addEventListener('click', () => {
   game.start();
   startBtn.textContent = 'Restart';
+  startBtn.classList.remove('start');
   startBtn.classList.add('restart');
   messageWin.classList.add('hidden');
   messageLose.classList.add('hidden');
+  startMessage.classList.add('hidden');
+
+  scoreElement.textContent = '0';
   render();
 });
 
